@@ -1,0 +1,55 @@
+\documentclass{article}
+
+%NOTE: amsthm may be unnecessary (as well as mathrsfs and tikz arrows)
+\usepackage{graphicx, amsmath, amsthm, amssymb, tikz, pgfplots, tabularx, lipsum, url ,csquotes}
+%\usepackage{mathrsfs}
+\usepackage[backend=biber]{biblatex}
+
+\addbibresource{refs.bib}
+\pgfplotsset{compat = newest}
+\graphicspath{{./pictures/}}
+\usepackage[dutch]{babel}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+%NOTE: probably not necessary. Will require amsthm!
+%\theoremstyle{definition}
+%\newtheorem*{Stelling}{Stelling}
+
+\binoppenalty=10000
+\relpenalty=10000 
+
+%\usetikzlibrary{arrows}
+
+\title{Het magnetisch veld van de Aarde}
+\author{Leonetti, Tjalling \and Martens, Aron \and Ulens, Ijmert \and Van den Brande, Dylano \and Van Tichelen, Olaf  }
+%TODO:CORRECT DATA FOR FINAL VERSION
+\date{March 2026}
+%TODO: Illustratie + OPO
+%
+\begin{document}
+
+\maketitle
+
+\tikz[remember picture, overlay]{
+  \node[anchor=north east] at (current page.north east) {
+    \includegraphics[scale=0.5]{kul_logo}
+  };
+}
+
+\newpage
+
+\tableofcontents
+\newpage
+\section{Inleiding}
+\section{Huidige structuur $\&$ mechanismen}
+\section{Meetmethoden}
+\section{Veranderingen}
+\section{Andere planeten}
+\section{Organismen}
+\section{Samenvatting}
+\section{Bibliografie}
+\nocite{*}
+\printbibliography[heading=none]
+\section{Ai-gebruik}
+\end{document}
+
