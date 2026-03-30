@@ -1,31 +1,54 @@
 \documentclass{article}
+\usepackage[a4paper,  margin=2cm]{geometry}
+
+%NOTE: Van numerieke wiskunde template
+%\documentclass[a4paper,headings=standardclasses]{scrartcl}
+%\usepackage[a4paper,margin=2.0cm]{geometry}
+
 
 %NOTE: amsthm may be unnecessary (as well as mathrsfs and tikz arrows)
-\usepackage{graphicx, amsmath, amsthm, amssymb, tikz, pgfplots, tabularx, lipsum, url ,csquotes}
+\usepackage{graphicx, amsmath, amsthm, amssymb, tikz, pgfplots, tabularx, lipsum, csquotes}
 %\usepackage{mathrsfs}
 \usepackage[backend=biber]{biblatex}
+
+\usepackage[hidelinks]{hyperref}
+
+%NOTE: maybe later?
+% Source - https://tex.stackexchange.com/a/847
+% Posted by Juan A. Navarro, modified by community. See post 'Timeline' for change history
+% Retrieved 2026-03-30, License - CC BY-SA 4.0
+%\usepackage{xcolor}
+%\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks,
+%    linkcolor={red!50!black},
+%    citecolor={blue!50!black},
+%    urlcolor={blue!80!black}
+%}
 
 \addbibresource{refs.bib}
 \pgfplotsset{compat = newest}
 \graphicspath{{./pictures/}}
 \usepackage[dutch]{babel}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
 
 %NOTE: probably not necessary. Will require amsthm!
 %\theoremstyle{definition}
 %\newtheorem*{Stelling}{Stelling}
 
+\setlength{\parindent}{0pt}
+
 \binoppenalty=10000
 \relpenalty=10000 
 
-%\usetikzlibrary{arrows}
 
+%TODO: STEAL SOME TEMPLATE TO MAKE IT LOOK BETTER
 \title{Het magnetisch veld van de Aarde}
-\author{Leonetti, Tjalling \and Martens, Aron \and Ulens, Ijmert \and Van den Brande, Dylano \and Van Tichelen, Olaf  }
-%TODO:CORRECT DATA FOR FINAL VERSION
-\date{March 2026}
-%TODO: Illustratie + OPO
-%
+\author{Leonetti, Tjalling \and Martens, Aron \and Ulens, Ijmert  \and Van Tichelen, Olaf  }
+%TODO:CORRECT DATE FOR FINAL VERSION
+\date{
+  OPO HIER!!!\\
+  March 2026
+}
 \begin{document}
 
 \maketitle
@@ -41,15 +64,96 @@
 \tableofcontents
 \newpage
 \section{Inleiding}
-\section{Huidige structuur $\&$ mechanismen}
-\section{Meetmethoden}
+%TODO:
+\section{Huidige structuur \texorpdfstring{$\&$}{&} mechanismen}
+%TODO:
+\section{Hoe het aardmagnetisch veld kan worden gemeten.}
+Een bekend meetinstrument om het aardmagnetisch veld te meten is de fluxgate magnetometer.
+Het eerste onderdeel daarvan is een zacht magnetisch materiaal dat de vorm van een ring heeft dat fysici de kern noemen.
+Een zacht magnetisch materiaal is een materiaal dat zich in de buurt van een magneetveld magnetiseert maar wanneer het magneetveld verdwijnt weer demagnetiseert zoals weekijzer.
+Een aandrijfspoel is rond de hele ring gewikkeld waarbij denkbeeldig de linkerkant en de rechterkant van de ring worden onderscheden.
+Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld zoals op de volgende figuur.
+
+%TODO: FIGURE
+
+Op de aandrijfspoel zit een wisselstroom. Beide kanten van de spoel zullen een magneetveld produceren waardoor de kern zich magnetiseert.
+Ieder helft van de kern zal daardoor voor een fluxverandering in de detectiespoel zorgen.
+Op een gegeven moment zal de kern zich niet nog meer magnetiseren.
+Zelfs niet als het magnetisch veld veroorzaakt door de stroom van de aandrijfspoel groter wordt.
+Dat noemen fysici verzadiging. Indien er geen extern magnetisch veld is, creëren de twee kanten van de kern voor de verzadiging een tegengestelde fluxverandering in de detectiespoel.
+De verzadiging is voor de twee kanten van de kern dan ook op exact hetzelfde moment. De totale fluxverandering in de detectiespoel zal daardoor altijd gelijk aan nul zijn.
+Volgens de inductiewet van Faraday zal de detectiespoel dan geen spanning krijgen.
+Indien een extern magnetisch veld een component heeft die uniform door de detectiespoel gaat, hebben beide helften van de kern zich al gemagnetiseerd.
+Het magnetisch veld is voor de ene helft van de kern in dezelfde zin en voor de andere helft van de kern in de tegengestelde zin van het magnetisch veld dat veroorzaakt is door de aandrijfspoel en door hen gaat.
+Wanneer de aandrijfspoel de twee helften magnetiseert, is het alsof exact hetzelfde proces optreedt maar waarbij de twee helften vanaf een ander vertrekpunt starten.
+Daardoor treedt de verzadiging van de twee helften niet op exact hetzelfde moment waardoor de totale fluxverandering in de detectiespoel dan niet gelijk aan nul zal zijn.
+Volgens de inductiewet van Faraday zal de detectiespoel een spanning krijgen. Als een van de twee helften het eerst verzadigt zal de spanning van de detectiespoel hard stijgen.
+Na een tijd raakt de tweede helft echter ook verzadigd en zal de spanning van de detectiespoel weer hard naar nul dalen.
+Omdat de stroom van de aandrijfspoel een wisselstroom is, zal daana exact hetzelfde proces maar dan met een negatieve spanning optreden.
+Het gevolg is dat de spanning van de detectiespoel een wisselspanning is. Anders gezegd is de spanning van de detectiespoel in functie van de tijd een sinusfunctie.
+Fysici meten de amplitude van die functie. Ze berekenen daarmee het component van het aardmagnetisch veld dat door de detectiespoel gaat.
+De fluxgate magnetometer blijkt een zeer gevoelig instrument te zijn dat waarme fysici waarden van tot de nanotesla exact bekomen.
+Het probleem is echter dat maar een component van het aardmagnetisch veld werd gemeten. Een oplossing is om op het punt waar het gewenst is het aardmagnetisch veld te meten een orthonormale assenstelsel in te voeren.
+Het component van het aardmagnetisch veld volgens de x-as, y-as en z-as is dan meetbaar door de fluxgate magnetometer volgens de x-as, y-as en z-as te leggen. 
+Zo zijn de sterkte en richting van het aardmagnetisch veld makkelijk te berekenen
+\cite{tjalling_imperial, tjalling_physicsopenlab, tjalling_dexinmag}.
+
 \section{Veranderingen}
+%TODO:
 \section{Andere planeten}
+%TODO:
 \section{Organismen}
+Het vermogen om de richting en/of de grootte van magnetische velden waar te nemen duikt op in diverse organismen, van bacteriën en reptielen tot zoogdieren en vogels 
+\cite{ijmert_annual_reviews, ijmert_open_life_sciences}.
+Hoewel magnetoreceptie is vastgesteld bij veel verschillende organismen, is het onderliggende mechanisme voor vele ervan nog niet opgehelderd.
+De zoektocht naar mechanismen en sites van magnetoreceptie in biologische wezens wordt bemoeilijkt doordat het gehele organisme als potentiële locatie in aanmerking komt.
+Biologisch materiaal is namelijk grotendeels doorlatend voor magnetische velden, in tegenstelling tot zichtbaar licht bijvoorbeeld.
+Hierdoor kunnen de magnetoreceptieve structuren zich eender waar in het organisme bevinden, in tegenstelling tot organen die instaan voor het waarnemen van zichtbaar licht, die kort bij het oppervlak van het organisme moeten liggen.
+
+Een bijkomende verklaring voor de bemoeilijkte vooruitgang in de zoektocht naar magnetoreceptieve mechanismen in organismen is het gebrek aan een analoog zintuig bij de mens.
+Mechanismen voor de waarneming van UV-licht door bepaalde organismen bijvoorbeeld is echter een extensie van de capaciteit van de mens om zichtbaar licht waar te nemen.
+Hierdoor kan er gebruikgemaakt worden van menselijke intuïties en de grote kennis van het menselijk oog om verklaringen te achterhalen voor deze mechanismen.
+Hoewel er studies bestaan die suggereren dat mensen mogelijk gevoelig zijn voor veranderende magnetische velden, is dit niet vergelijkbaar met het zicht, aangezien dat laatste een evident, bewust en uitgebreid bestudeerd zintuig is waarop menselijke intuïtie veel gemakkelijker kan steunen
+\cite{ijmert_annual_reviews, ijmert_physics_today, ijmert_eneuro}.
+
+Een voorbeeld van een organisme waarbij het mechanisme van magnetoreceptie wél is opgehelderd, zijn magnetotactische bacteriën. Al in 1963 werd waargenomen dat deze groep bacteriën zwommen in de richting van de noordpool van de aarde.
+Dit gedrag wordt mogelijk gemaakt door gespecialiseerde organellen, zogenaamde magnetosomen.
+Deze organellen bestaan uit een membraan omsloten ijzerbevattend kristal, met een bepaalde grootte die ervoor zorgt dat ze bestaan uit één enkel magnetisch domein en zich gedragen als een permanente magneet op kamertemperatuur.
+Dit kristal zal zich oriënteren in het magnetisch veld van de aarde zodat de magnetische noordpool van het kristal naar de zuidpool van de aarde wijst. In het merendeel van de magnetotactische bacteriën zullen deze organellen samenhangen in kettingen, zoals te zien in 
+%TODO:FIGURE
+figuur X.
+Deze ketting zal zich oriënteren naar het magnetisch veld en zich gedragen als een kompasnaald 
+\cite{ijmert_nature}.
+
+
+De werking van magnetoreceptie bij dieren is veel minder duidelijk dan het mechanisme voor magnetoreceptie bij de magnetotactische bacteriën. Er worden meerdere mechanismen voorgesteld, waaronder 
+\cite{ijmert_physics_today}:
+\begin{itemize}
+  \item een gelijkaardig proces als de magnetotactische bacteriën, leunend op magnetische ijzer bevattende kristallen.
+  \item magnetoreceptie leunend op elektromagnetische inductie, waar een geleidend materiaal een potentiaalverschil creëert wanneer het door een magnetisch veld beweegt.
+  \item het kwantummechanische radicale-paar mechanisme, waar het magneetveld invloed heeft op de reactiesnelheid van een chemische reactie. 
+\end{itemize}
+
+Veel dieren, zoals haaien en andere vissen, hebben het vermogen om elektrische velden te detecteren.
+Bij haaien leunt het mechanisme op honderden kanalen die beginnen in de poriën op de huid van de haai, en ergens in het lichaam van de haai eindigen.
+De wanden van deze kanalen zijn uiterst resistief, en de kanalen zijn gevuld met een geleidende gelei achtige substantie. Wanneer de haai zwemt in een magnetisch veld, zal er een potentiaalverschil ontstaan over deze geleidende substantie.
+Dit door de magnetische inductie van een geleider wanneer het beweegt door een elektrisch veld. De zintuiglijke structuren genaamd de Ampullen van Lorenzini op het einde van de kanalen in de haai, kunnen dit potentiaalverschil waarnemen.
+Op deze manier is het theoretisch mogelijk om een magnetisch veld waar te nemen 
+\cite{ijmert_physics_today}. 
+
+Het mechanisme, gebaseerd op het kwantummechanische radicale-paar mechanisme, zou plaatsvinden in fotoreceptieve eiwitten, namelijk cryptochromen.
+De radicale paren zullen verschillende chemische reacties ondergaan, afhankelijk van of ze zich in een singlet of triplet toestand bevinden.
+De snelheid waarbij een radicaal naar een triplet toestand overgaat hangt af van het magnetisch veld, dus de aanwezigheid van het chemisch product afkomstig van de chemische reactie geassocieerd met de triplet toestand kan informatie opleveren over het magnetisch veld.
+Dit mechanisme, samen met het mechanisme leunend op magnetische ijzer bevattende kristallen, zijn mogelijke verklaring voor magnetoreceptie in vogels.
+Ze gebruiken magnetoreceptie om zich te oriënteren tijdens hun seizoensgebonden migratie 
+\cite{ijmert_physics_today, ijmert_royal_society}.
 \section{Samenvatting}
+%TODO:
 \section{Bibliografie}
+%NOTE: TEMPORARY
 \nocite{*}
 \printbibliography[heading=none]
 \section{Ai-gebruik}
+%TODO:
 \end{document}
 
