@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,  margin=2cm]{geometry}
+\usepackage[a4paper,  margin=2.5cm]{geometry}
 
 %NOTE: Van numerieke wiskunde template
 %\documentclass[a4paper,headings=standardclasses]{scrartcl}
@@ -7,7 +7,7 @@
 
 
 %NOTE: amsthm may be unnecessary (as well as mathrsfs and tikz arrows)
-\usepackage{graphicx, amsmath, amsthm, amssymb, tikz, pgfplots, tabularx, lipsum, csquotes}
+\usepackage{graphicx, amsmath, amsthm, amssymb, tikz, pgfplots, tabularx, lipsum, csquotes, wrapfig}
 %\usepackage{mathrsfs}
 \usepackage[backend=biber]{biblatex}
 
@@ -44,10 +44,10 @@
 %TODO: STEAL SOME TEMPLATE TO MAKE IT LOOK BETTER
 \title{Het magnetisch veld van de Aarde}
 \author{Leonetti, Tjalling \and Martens, Aron \and Ulens, Ijmert  \and Van Tichelen, Olaf  }
-%TODO:CORRECT DATE FOR FINAL VERSION
+%WARN:CORRECT DATE FOR FINAL VERSION
 \date{
-  OPO HIER!!!\\
-  March 2026
+  Algemene natuurkunde II (B-KUL-G0N13B) \\
+  3 April 2026
 }
 \begin{document}
 
@@ -67,15 +67,18 @@
 %TODO:
 \section{Huidige structuur \texorpdfstring{$\&$}{&} mechanismen}
 %TODO:
-\section{Hoe het aardmagnetisch veld kan worden gemeten.}
+\section{Hoe het aardmagnetisch veld kan worden gemeten}
 Een bekend meetinstrument om het aardmagnetisch veld te meten is de fluxgate magnetometer.
 Het eerste onderdeel daarvan is een zacht magnetisch materiaal dat de vorm van een ring heeft dat fysici de kern noemen.
 Een zacht magnetisch materiaal is een materiaal dat zich in de buurt van een magneetveld magnetiseert maar wanneer het magneetveld verdwijnt weer demagnetiseert zoals weekijzer.
 Een aandrijfspoel is rond de hele ring gewikkeld waarbij denkbeeldig de linkerkant en de rechterkant van de ring worden onderscheden.
-Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld zoals op de volgende figuur.
-
-%TODO: FIGURE
-
+Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld zoals in figuur \ref{fig:tjalling1}.
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{tjalling_fig1.jpg}
+    \caption{aandrijfspoel en detectiespoel\cite{tjalling_imperial}}
+    \label{fig:tjalling1}
+\end{wrapfigure}
 Op de aandrijfspoel zit een wisselstroom. Beide kanten van de spoel zullen een magneetveld produceren waardoor de kern zich magnetiseert.
 Ieder helft van de kern zal daardoor voor een fluxverandering in de detectiespoel zorgen.
 Op een gegeven moment zal de kern zich niet nog meer magnetiseren.
@@ -102,7 +105,7 @@ Zo zijn de sterkte en richting van het aardmagnetisch veld makkelijk te berekene
 %TODO:
 \section{Andere planeten}
 %TODO:
-\section{Organismen}
+\section{Hoe organismen het magnetisch veld van de aarde kunnen waarnemen: magnetoreceptie}
 Het vermogen om de richting en/of de grootte van magnetische velden waar te nemen duikt op in diverse organismen, van bacteriën en reptielen tot zoogdieren en vogels 
 \cite{ijmert_annual_reviews, ijmert_open_life_sciences}.
 Hoewel magnetoreceptie is vastgesteld bij veel verschillende organismen, is het onderliggende mechanisme voor vele ervan nog niet opgehelderd.
@@ -120,12 +123,15 @@ Een voorbeeld van een organisme waarbij het mechanisme van magnetoreceptie wél 
 Dit gedrag wordt mogelijk gemaakt door gespecialiseerde organellen, zogenaamde magnetosomen.
 Deze organellen bestaan uit een membraan omsloten ijzerbevattend kristal, met een bepaalde grootte die ervoor zorgt dat ze bestaan uit één enkel magnetisch domein en zich gedragen als een permanente magneet op kamertemperatuur.
 Dit kristal zal zich oriënteren in het magnetisch veld van de aarde zodat de magnetische noordpool van het kristal naar de zuidpool van de aarde wijst. In het merendeel van de magnetotactische bacteriën zullen deze organellen samenhangen in kettingen, zoals te zien in 
-%TODO:FIGURE
-figuur X.
-Deze ketting zal zich oriënteren naar het magnetisch veld en zich gedragen als een kompasnaald 
+figuur \ref{fig:ijmert1}. Deze ketting zal zich oriënteren naar het magnetisch veld en zich gedragen als een kompasnaald 
 \cite{ijmert_nature}.
 
-
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{ijmert_fig1.jpg}
+    \caption{Magnetosoom ketting in bacterium\cite{ijmert_nature}}
+    \label{fig:ijmert1}
+\end{wrapfigure}
 De werking van magnetoreceptie bij dieren is veel minder duidelijk dan het mechanisme voor magnetoreceptie bij de magnetotactische bacteriën. Er worden meerdere mechanismen voorgesteld, waaronder 
 \cite{ijmert_physics_today}:
 \begin{itemize}
@@ -150,7 +156,7 @@ Ze gebruiken magnetoreceptie om zich te oriënteren tijdens hun seizoensgebonden
 \section{Samenvatting}
 %TODO:
 \section{Bibliografie}
-%NOTE: TEMPORARY
+%WARN: TEMPORARY
 \nocite{*}
 \printbibliography[heading=none]
 \section{Ai-gebruik}
