@@ -6,14 +6,20 @@
 %\usepackage[a4paper,margin=2.0cm]{geometry}
 
 
-%NOTE: amsthm may be unnecessary (as well as mathrsfs and tikz arrows)
-\usepackage{graphicx, amsmath, amsthm, amssymb, tikz, pgfplots, tabularx, lipsum, csquotes, wrapfig}
-%\usepackage{mathrsfs}
+\usepackage{amsmath, amssymb, }
+
 \usepackage[backend=biber]{biblatex}
+\addbibresource{refs.bib}
+
+\usepackage{graphicx, csquotes, wrapfig, tikz, pgfplots}
+\pgfplotsset{compat = newest}
+\graphicspath{{./pictures/}}
+
+\usepackage[dutch]{babel}
+\usepackage{csquotes}
 
 \usepackage[hidelinks]{hyperref}
-
-%NOTE: maybe later?
+%NOTE: maybe later? Edit: seems all right like this. But some pdf viewers (eg. zathura) don't display links. Github also doesn't.
 % Source - https://tex.stackexchange.com/a/847
 % Posted by Juan A. Navarro, modified by community. See post 'Timeline' for change history
 % Retrieved 2026-03-30, License - CC BY-SA 4.0
@@ -26,19 +32,20 @@
 %    urlcolor={blue!80!black}
 %}
 
-\addbibresource{refs.bib}
-\pgfplotsset{compat = newest}
-\graphicspath{{./pictures/}}
-\usepackage[dutch]{babel}
 
-%NOTE: probably not necessary. Will require amsthm!
-%\theoremstyle{definition}
-%\newtheorem*{Stelling}{Stelling}
+
+% Source - https://tex.stackexchange.com/a/7549
+% Posted by yannisl, modified by community. See post 'Timeline' for change history
+% Retrieved 2026-04-03, License - CC BY-SA 4.0
+\usepackage{xspace}
+\newcommand{\latex}{\LaTeX\xspace}
+
 
 \setlength{\parindent}{0pt}
 
-\binoppenalty=10000
-\relpenalty=10000 
+\binoppenalty=100000
+\relpenalty=100000
+
 
 
 %TODO: STEAL SOME TEMPLATE TO MAKE IT LOOK BETTER
@@ -53,20 +60,38 @@
 
 \maketitle
 
+%Don't remember where I got this from? Paper from high school. Might be AI slop? or random stackexchange post?
 \tikz[remember picture, overlay]{
   \node[anchor=north east] at (current page.north east) {
     \includegraphics[scale=0.5]{kul_logo}
   };
 }
 
+%NOTE: The meme isn't good enough
+%\begin{figure}[b!]
+%  \centering
+%  \includegraphics[width=0.4\textwidth]{meme.png}
+%\end{figure}
+
 \newpage
 
 \tableofcontents
 \newpage
 \section{Inleiding}
-%TODO:
-\section{Huidige structuur \texorpdfstring{$\&$}{&} mechanismen}
-%TODO:
+\textit{Hier zal de inleding komen.}
+\section{Huidige structuur \texorpdfstring{\&}{&} mechanismen}
+\label{sec:sec_2}
+\textit{In dit hoofdstuk zullen we de huidige structuur van het aardmagnetisch veld en de mechanismen die dit instand houden bespreken.
+Om te beginnen zullen we de Aarde als een magnetische dipool voorstellen. Dit volstaat om de structuur en sterkte van het aardmagnetisch veld te demonstreren.
+Paleomagnetische bronnen - zoals beschreven in \hyperref[sec:sec_4]{hoofdstuk 4} - demonstreren echter dat er zich polariteitsomkeringen van het magnetisch veld voordoen. 
+Dit wijst op de nood aan een dynamischer model dan onze dipool. We introduceren de dynamotheorie of magnetohydrodynamica (MHD) om door geïnduceerde stromen in een geleidende vloeistof veranderingen in het magneetveld te verklaren.
+Ten slotte zullen we de lezer introduceren met hedendaags onderzoek dat polariteitsomkeringen probeert te voorspellen met stochastische differentiaalvergelijkingen of het magneetveld tracht te modelleren met numerieke simulaties.
+\newline{}We zullen geen modellen expliciet construeren, aangezien dit ons te ver zou leiden. Hiervoor verwijzen we naar het uitgebreide boek \cite{aron_book_ch8}.}\\
+
+\textit{De voorlopige bronnen van dit hoofdstuk zijn, ongeveer in de volgorde van de opbouw hierboven, \cite{aron_book_ch1, aron_book_ch2, aron_demorest_paper, aron_book_ch8, aron_stochastic, aron_next_reversal, aron_roberts}.}
+
+%TODO: Write actual text
+
 \section{Hoe het aardmagnetisch veld kan worden gemeten}
 Een bekend meetinstrument om het aardmagnetisch veld te meten is de fluxgate magnetometer.
 Het eerste onderdeel daarvan is een zacht magnetisch materiaal dat de vorm van een ring heeft dat fysici de kern noemen.
@@ -80,7 +105,7 @@ Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld zoals 
     \label{fig:tjalling1}
 \end{wrapfigure}
 Op de aandrijfspoel zit een wisselstroom. Beide kanten van de spoel zullen een magneetveld produceren waardoor de kern zich magnetiseert.
-Ieder helft van de kern zal daardoor voor een fluxverandering in de detectiespoel zorgen.
+Iedere helft van de kern zal daardoor voor een fluxverandering in de detectiespoel zorgen.
 Op een gegeven moment zal de kern zich niet nog meer magnetiseren.
 Zelfs niet als het magnetisch veld veroorzaakt door de stroom van de aandrijfspoel groter wordt.
 Dat noemen fysici verzadiging. Indien er geen extern magnetisch veld is, creëren de twee kanten van de kern voor de verzadiging een tegengestelde fluxverandering in de detectiespoel.
@@ -102,9 +127,56 @@ Zo zijn de sterkte en richting van het aardmagnetisch veld makkelijk te berekene
 \cite{tjalling_imperial, tjalling_physicsopenlab, tjalling_dexinmag}.
 
 \section{Veranderingen}
-%TODO:
-\section{Andere planeten}
-%TODO:
+\label{sec:sec_4}
+\textit{In dit hoofdstuk bespreken we de veranderingen in het aardmagnetisch veld en de detectiemehtoden hiervoor. De bronvermeldingen en citeringen voor dit hoofdtstuk moeten nog verder uitgewerkt worden.}\\
+
+Het aardmagnetisch veld is allesbehalve statisch; het verandert voortdurend van sterkte, richting en zelfs van polariteit. Door de geschiedenis van de Aarde heen hebben deze veranderingen plaatsgevonden op verschillende tijdschalen, van eeuwen tot miljoenen jaren.
+Wetenschappers hebben dit fascinerende verleden kunnen bestuderen door gebruik te maken van slimme methoden die variëren van het bestuderen van oude stenen tot het analyseren van scheepsjournalen.
+
+De meest drastische veranderingen die het magnetisch veld ondergaat, zijn de polariteitsomkeringen. Hierbij schuiven de magnetische polen over de aardbol en wisselen uiteindelijk van plaats.
+Dit is geen plotselinge gebeurtenis, maar een chaotisch proces dat enkele duizenden jaren kan duren. Gedurende deze periode verzwakt het veld en wordt het instabiel, wat tijdelijk de bescherming tegen kosmische straling vermindert.
+Gemiddeld zit er ongeveer 300.000 jaar tussen deze omkeringen. De laatste volledige omkering vond ongeveer 780.000 jaar geleden plaats, wat betekent dat we momenteel "over tijd" zijn voor de volgende.
+
+De laatste 2000 jaar is het veld met 35\% afgenomen in sterkte en er zijn aanwijzingen dat het veld zich momenteel mogelijk voorbereidt op een omkering, al kan de huidige verzwakking ook onderdeel zijn van een tijdelijke fluctuatie.
+
+Recent onderzoek uit 2026 heeft ons beeld van dit proces verrijkt. Door sedimentkernen uit de Noord-Atlantische oceaan te analyseren, ontdekten wetenschappers dat een omkering van ongeveer 40 miljoen jaar geleden maar liefst 70.000 jaar duurde.
+Dit is zeven keer langer dan de eerder geschatte 10.000 jaar en bewijst dat de duur van omkeringen sterk kan variëren.
+
+Naast deze korte "flips" zijn er ook superchrons: perioden van uitzonderlijke stabiliteit waarin het veld gedurende tientallen miljoenen jaren niet omkeert.
+In de laatste 540 miljoen jaar zijn er drie van zulke superchrons bekend. Onderzoek heeft zelfs aanwijzingen gevonden voor nog eens tien superchrons in de 1,3 miljard jaar daarvoor.
+Dit is verrassend omdat wetenschappers verwachtten dat de afkoeling van de Aarde en de groei van de vaste binnenkern een groot effect zouden hebben op het gedrag van het veld.
+De ontdekking suggereert dat het mechanisme dat het veld opwekt, de geodynamo, veel robuuster is dan gedacht.
+
+Omdat er niemand was om het magnetisch veld van miljoenen jaren geleden te meten, moeten wetenschappers creatief zijn.
+
+\textbf{Paleomagnetisme}: Dit is de belangrijkste methode om ver terug in de tijd te kijken. Bepaalde gesteenten, zoals vulkanisch gesteente (basalt), bevatten ijzerhoudende mineralen (zoals magnetiet).
+Wanneer lava afkoelt, worden deze mineraaltjes gemagnetiseerd in de richting van het dan heersende aardmagnetisch veld. Deze richting wordt vervolgens "bevroren" in het gesteente.
+Op dezelfde manier kunnen sedimenten op de bodem van oceanen kleine magneetkorreltjes bevatten die zich tijdens afzetting als minuscule kompasnaaldjes richten naar het veld.
+
+Een nieuwe techniek, \textbf{Micromagnetische Tomografie} (MMT) gaat nog een stap verder.
+In plaats van het gemiddelde signaal van miljoenen korreltjes te meten, kan MMT het magnetische moment van individuele mineraalkorrels analyseren.
+Hierdoor kunnen wetenschappers de betrouwbare signaaldragers eruit pikken en nog preciezere reconstructies maken van het oude veld.
+
+\textbf{Archeomagnetisme}: Voor de periode van de laatste duizenden jaren biedt archeologie een uitkomst.
+Voorwerpen van gebakken klei, zoals aardewerk, bakstenen of de wanden van ovens, zijn uitstekende registraties.
+Tijdens het bakken verliezen de kleimineralen hun oude magnetisatie en krijgen ze bij afkoeling een nieuwe magnetisatie, exact parallel aan het veld van dat moment.
+Door deze voorwerpen te bestuderen, kunnen wetenschappers het gedrag van het veld van de afgelopen millennia reconstrueren.
+
+Historische bronnen: Het archief in scheepsjournalen: Voor de laatste 400 jaar is er nog een bijzondere bron: de logboeken van zeevaarders.
+Vanaf de 16e eeuw voeren schippers op hun kompas. De afwijking tussen de door het kompas aangewezen richting en de ware geografische noordpool (de declinatie) werd nauwkeurig genoteerd.
+Geofysicus Dr. Andrew Jackson reisde door Europa om duizenden van deze scheepsjournalen uit de periode 1590-1900 te lezen.
+Door deze enorme hoeveelheid data te combineren met andere metingen, kon hij de veranderingen in het veld van de afgelopen eeuwen in kaart brengen. 
+
+
+%NOTE: Capitalization of "Zon" is correct. See: https://www.vlaanderen.be/team-taaladvies/taaladviezen/planeten-hemellichamen-sterrenbeelden-hoofdletter
+\section{Magnetische velden van planeten en de Zon}
+\textit{In dit hoofstuk zullen we het magneetveld van andere planeten en van de Zon bespreken. De voorlopige bron voor dit hoofdstuk is \cite{olaf_wikipedia}.}\\
+
+Het magnetisch veld is niet uniek aan onze aarde. Het komt ook voor bij andere planeten, en bij onze zon. Maar ze is wel verschillend in sterkte.
+Sommige planeten hebben er geen, andere hebben er die tot wel 50 keer sterker kunnen zijn dan van onze aarde. 
+
+%TODO:rest of chapter
+
 \section{Hoe organismen het magnetisch veld van de aarde kunnen waarnemen: magnetoreceptie}
 Het vermogen om de richting en/of de grootte van magnetische velden waar te nemen duikt op in diverse organismen, van bacteriën en reptielen tot zoogdieren en vogels 
 \cite{ijmert_annual_reviews, ijmert_open_life_sciences}.
@@ -154,12 +226,15 @@ Dit mechanisme, samen met het mechanisme leunend op magnetische ijzer bevattende
 Ze gebruiken magnetoreceptie om zich te oriënteren tijdens hun seizoensgebonden migratie 
 \cite{ijmert_physics_today, ijmert_royal_society}.
 \section{Samenvatting}
-%TODO:
+\textit{Hier zal de samenvatting komen.}
 \section{Bibliografie}
-%WARN: TEMPORARY
-\nocite{*}
+
 \printbibliography[heading=none]
-\section{Ai-gebruik}
-%TODO:
+\section{AI-gebruik}
+%TODO: ADD more info
+Op dit moment is zeker geen AI-gebruik in het schrijven van \hyperref[sec:sec_2]{hoofdstuk 2}, alsook in het schrijven van bronvermeldingen en \latex code.
+
+Deze informatie zal nog verder aangevuld worden. In de definitieve versie zal uiteraard enkel vermeld worden waar generatieve AI \textit{wel} gebruikt werd.
+
 \end{document}
 
