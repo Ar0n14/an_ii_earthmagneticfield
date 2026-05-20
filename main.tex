@@ -6,6 +6,8 @@
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{parskip}
 
+\usepackage{caption}
+
 \usepackage[backend=biber, style=numeric-comp, sorting=none]{biblatex}
 \addbibresource{refs.bib}
 
@@ -45,7 +47,8 @@
 
 \begin{figure}[b!]
   \centering
-%  \includegraphics[width=0.4\textwidth]{} %TODO: IMAGE
+  \includegraphics[width=\textwidth]{magnetic_field_cover_print.jpg} %TODO: IMAGE
+  \caption*{Voorbeeld voorblad: TODO \cite{voorblad}}
 \end{figure}
 \newpage
 \tableofcontents
@@ -61,17 +64,30 @@ Deze lepel roteerde op een gladde plaat en richtte zich naar het magnetisch noor
 Dit is een stroom geladen deeltjes afkomstig van de zon, die schadelijk zou zijn voor het leven op aarde \cite{aron_book_ch2}. Het magnetisch veld heeft een meetbare structuur en een fysieke oorsprong.
 Deze zullen allebei aan bod komen in dit hoofdstuk. We zullen nu starten met de eenvoudigste beschrijving van deze structuur.
 
-Een eerste benadering voor het magneetveld van de aarde is die van een eenvoudige staafmagneet, ofwel een dipool. Hierbij komen de veldlijnen tevoorschijn in de ene pool, bewegen zich gekromd voort door de ruimte en verdwijnen weer in de andere pool, zoals te zien is in Figuur 1 \cite{aron_book_ch2}.%TODO:HEREE
-Dit geeft ons een notie voor een magnetische noord- en zuidpool, maar deze zijn anders dan de geografische polen van de aarde, het aardmagnetisch veld heeft een dipoolrichting die 11° gekanteld is ten opzichte van de rotatieas \cite{aron_book_ch2, aron_demorest_paper}. (FIGURE 1, earth with field lines.) 
-Dit model geeft ons ook een beeld van de sterkte van het veld. Zo zien we in figuur... dat aan de polen de veldlijnen dichter bij elkaar liggen en het veld dus sterker is dan aan de evenaar.
+Een eerste benadering voor het magneetveld van de aarde is die van een eenvoudige staafmagneet, ofwel een dipool. Hierbij komen de veldlijnen tevoorschijn in de ene pool, bewegen zich gekromd voort door de ruimte en verdwijnen weer in de andere pool, zoals te zien is in Figuur \ref{fig:aron1} \cite{aron_book_ch2}. %TODO:HEREE 
+Dit geeft ons een notie voor een magnetische noord- en zuidpool, maar deze zijn anders dan de geografische polen van de aarde, het aardmagnetisch veld heeft een dipoolrichting die 11° gekanteld is ten opzichte van de rotatieas \cite{aron_book_ch2, aron_demorest_paper}.
+Dit model geeft ons ook een beeld van de sterkte van het veld. Zo zien we in Figuur \ref{fig:aron1} dat de veldlijnen aan de polen dichter bij elkaar liggen en het veld dus sterker is dan aan de evenaar.
 Deze manier om het magneetveld van de Aarde te beschrijven volstaat om de algemene structuur die we observeren te beschrijven, maar hoewel het dipoolmodel een goed statisch beeld geeft, verklaart het niet waar het magneetveld vandaan komt en of het stabiel is.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{aron1.jpg}
+    \caption{visuele voorstelling van veldlijnen van het statische dipoolveld \cite{aron_image1}}
+    \label{fig:aron1}
+\end{figure}
 
 Het voornaamste bewijs waarom het dipoolmodel tekort schiet is terug te vinden in gesteenten. Ijzer en andere gesteenten leggen namelijk hun magnetische oriëntatie vast wanneer ze voorbij hun Curiepunt afkoelen. Dit vormt de basis voor het paleomagnetisme \cite{aron_demorest_paper}.
 Zo weet men uit waarnemingen dat het magneetveld niet altijd hetzelfde geweest is. Het veld ondergaat herhaaldelijke polariteitswisselingen, wat fundamenteel incompatibel is met een statisch dipoolmodel \cite{aron_demorest_paper}. Paleomagnetisme en andere modernere technieken om veranderingen in het veld waar te nemen worden verder besproken in \hyperref[sec:sec_4]{Hoofdstuk 4}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{aron2.png}
+    \caption{Visuele voorstelling van hoe het $\omega$-effect het poloidale veld toroidaal maakt in de aardkern. (a) Een initieel magneetveld dat door de kern gaat (links) en een cylindrisch snelheidsveld (rechts) worden weergegeven. (b) De interactie tussen beide velden in (a) wordt op drie verschillende momenten weergegeven, van links naar rechts \cite{aron_book_ch8}}.
+    \label{fig:aron2}
+  \end{figure}
 De antwoorden op de vragen over het aardmagnetisch veld zijn te vinden binnenin de aarde. Het vaste binnenste deel van de kern en het vloeibare buitenste deel bestaan beide voornamelijk uit ijzer. Aangezien ijzer geleidend is, wordt een elektrisch veld opgewekt wanneer deze vloeistof door het magneetveld beweegt, wat op zijn beurt een nieuw magneetveld opwekt \cite{aron_demorest_paper}.
 Dit biedt de basis voor de dynamotheorie, ook wel de magnetohydrodynamica (MHD) genoemd. Er zijn twee zaken die dit proces stabiel houden.
-Enerzijds is er het $\omega$-effect. Dit effect vindt plaats doordat de vloeistof sneller circuleert op sommige diepten dan andere, waardoor het de veldlijnen buigt en keert van een poloidale naar een toroidale configuratie, zoals te zien is in (FIGURE DEMORES FIG 2) \cite{aron_demorest_paper, aron_book_ch8}. Anderzijds speelt het $\alpha$-effect een rol.
+Enerzijds is er het $\omega$-effect. Dit effect vindt plaats doordat de vloeistof sneller circuleert op sommige diepten dan andere, waardoor het de veldlijnen buigt en keert van een poloidale naar een toroidale configuratie, zoals te zien is in Figuur \ref{fig:aron2} \cite{aron_demorest_paper, aron_book_ch8}. Anderzijds speelt het $\alpha$-effect een rol.
 Dit effect beschrijft hoe opstijgende kolommen vloeistof beïnvloed worden door de Corioliskracht, waardoor het toroidale veld weer omgezet wordt naar het originele poloidale veld \cite{aron_demorest_paper, aron_book_ch8}. Deze effecten worden samen het $\alpha\omega$-effect genoemd.
 De nodige energie voor deze effecten wordt geleverd door het stollen van de binnenkern, waardoor warmte en lichtere elementen vrijkomen, die de vloeistofstromen aanwakkeren \cite{aron_demorest_paper}. Verder is deze dynamo ook wel echt noodzakelijk voor ons magneetveld.
 De berekeningen in \cite{aron_book_ch8} laten immers zien dat het magneetveld zonder dynamo zou uitdoven na 10 000 tot 30 000 jaar. Aangezien de aarde veel ouder is dan dit, biedt dit nog een bewijs dat een dynamotheorie niet onredelijk is.
@@ -79,7 +95,6 @@ Het $\alpha\omega$-effect is stabiel genoeg om op korte tijdschaal een dipool vo
 
 Omdat de geodynamo chaotisch is, is het niet praktisch om de volgende polariteitsomkeringen deterministisch te voorspellen. Hiervoor worden twee moderne aanpakken gebruikt.
 De eerste methode is het stochastisch modelleren van het magneetveld door gebruik te maken van paleomagnetische observaties en verzamelde data. Hieruit krijgt men allerhande resultaten, zoals dat de kans op een omkering in de komende 20 000 jaar kleiner dan 2\% is en dat de huidige afname in dipoolmoment vreemd is, maar wel nog binnen de natuurlijke variatie valt \cite{aron_next_reversal}.
-
 De andere methode is de volledige MHD vergelijkingen numeriek te simuleren. Zo zijn Glatzmaier \& Roberts er in 1995 al in geslaagd om een veld zoals dat van de Aarde te simuleren, dat ook spontane omkeringen onderging \cite{aron_roberts}. Deze methoden vullen elkaar aan en hebben elk hun voor- en nadelen en naar beide wordt nog steeds onderzoek gevoerd.
 
 
@@ -88,11 +103,11 @@ Een bekend meetinstrument om het aardmagnetisch veld te meten is de fluxgate mag
 Het eerste onderdeel daarvan is een zacht magnetisch materiaal dat de vorm van een ring heeft dat fysici de kern noemen.
 Een zacht magnetisch materiaal is een materiaal dat zich in de buurt van een magneetveld magnetiseert maar wanneer het magneetveld verdwijnt weer demagnetiseert zoals weekijzer.
 Een aandrijfspoel is rond de hele ring gewikkeld waarbij denkbeeldig de linkerkant en de rechterkant van de ring worden onderscheden.
-Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld zoals in figuur \ref{fig:tjalling1}.
+Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld zoals in Figuur \ref{fig:tjalling1}.
 \begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.5\textwidth]{tjalling_fig1.jpg}
-    \caption{aandrijfspoel en detectiespoel\cite{tjalling_imperial}}
+    \caption{}
     \label{fig:tjalling1}
 \end{figure}
 Op de aandrijfspoel zit een wisselstroom. Beide kanten van de spoel zullen een magneetveld produceren waardoor de kern zich magnetiseert.
@@ -183,13 +198,13 @@ Een voorbeeld van een organisme waarbij het mechanisme van magnetoreceptie wél 
 Dit gedrag wordt mogelijk gemaakt door gespecialiseerde organellen, zogenaamde magnetosomen.
 Deze organellen bestaan uit een membraan omsloten ijzerbevattend kristal, met een bepaalde grootte die ervoor zorgt dat ze bestaan uit één enkel magnetisch domein en zich gedragen als een permanente magneet op kamertemperatuur.
 Dit kristal zal zich oriënteren in het magnetisch veld van de aarde zodat de magnetische noordpool van het kristal naar de zuidpool van de aarde wijst. In het merendeel van de magnetotactische bacteriën zullen deze organellen samenhangen in kettingen, zoals te zien in 
-figuur \ref{fig:ijmert1}. Deze ketting zal zich oriënteren naar het magnetisch veld en zich gedragen als een kompasnaald 
+Figuur \ref{fig:ijmert1}. Deze ketting zal zich oriënteren naar het magnetisch veld en zich gedragen als een kompasnaald 
 \cite{ijmert_nature}.
 
 \begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.5\textwidth]{ijmert_fig1.jpg}
-    \caption{Magnetosoom ketting in bacterium\cite{ijmert_nature}}
+    \caption{Magnetosoom ketting in bacterium \cite{ijmert_nature}}
     \label{fig:ijmert1}
 \end{figure}
 De werking van magnetoreceptie bij dieren is veel minder duidelijk dan het mechanisme voor magnetoreceptie bij de magnetotactische bacteriën. Er worden meerdere mechanismen voorgesteld, waaronder 
