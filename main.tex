@@ -6,12 +6,13 @@
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{parskip}
 
-\usepackage{caption}
+\usepackage[margin=10pt,font=footnotesize,labelfont=bf,
+labelsep=endash]{caption}
 
 \usepackage[backend=biber, style=numeric-comp, sorting=none]{biblatex}
 \addbibresource{refs.bib}
 
-\usepackage{graphicx, csquotes, wrapfig, tikz, pgfplots}
+\usepackage{graphicx, csquotes, tikz, pgfplots}
 \pgfplotsset{compat = newest}
 \graphicspath{{./pictures/}}
 
@@ -32,7 +33,7 @@
 
 
 
-\title{Het magnetisch veld van de Aarde}
+\title{Het magnetisch veld van de aarde}
 \author{Tjalling, Leonetti \and  Aron, Martens \and Ijmert, Ulens  \and Olaf, Van Tichelen }
 \date{
   Algemene Natuurkunde II (B-KUL-G0N13B) \\
@@ -67,12 +68,12 @@ Deze zullen allebei aan bod komen in dit hoofdstuk. We zullen nu starten met de 
 Een eerste benadering voor het magneetveld van de aarde is die van een eenvoudige staafmagneet, ofwel een dipool. Hierbij komen de veldlijnen tevoorschijn in de ene pool, bewegen zich gekromd voort door de ruimte en verdwijnen weer in de andere pool, zoals te zien is in Figuur \ref{fig:aron1} \cite{aron_book_ch2}. %TODO:HEREE 
 Dit geeft ons een notie voor een magnetische noord- en zuidpool, maar deze zijn anders dan de geografische polen van de aarde, het aardmagnetisch veld heeft een dipoolrichting die 11° gekanteld is ten opzichte van de rotatieas \cite{aron_book_ch2, aron_demorest_paper}.
 Dit model geeft ons ook een beeld van de sterkte van het veld. Zo zien we in Figuur \ref{fig:aron1} dat de veldlijnen aan de polen dichter bij elkaar liggen en het veld dus sterker is dan aan de evenaar.
-Deze manier om het magneetveld van de Aarde te beschrijven volstaat om de algemene structuur die we observeren te beschrijven, maar hoewel het dipoolmodel een goed statisch beeld geeft, verklaart het niet waar het magneetveld vandaan komt en of het stabiel is.
+Deze manier om het magneetveld van de aarde te beschrijven volstaat om de algemene structuur die we observeren te beschrijven, maar hoewel het dipoolmodel een goed statisch beeld geeft, verklaart het niet waar het magneetveld vandaan komt en of het stabiel is.
 
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=0.5\textwidth]{aron1.jpg}
-    \caption{visuele voorstelling van veldlijnen van het statische dipoolveld \cite{aron_image1}}
+    \includegraphics[width=0.5\textwidth]{aron_fig1.jpg}
+    \caption{Visuele voorstelling van veldlijnen van het statische dipoolveld. In het rood is de rotatieas te zien. In het blauw is de magnetische as te zien. Horizontaal in het geel is de elliptische baan van de aarde rond de zon gegeven \cite{aron_image1}.}
     \label{fig:aron1}
 \end{figure}
 
@@ -81,8 +82,8 @@ Zo weet men uit waarnemingen dat het magneetveld niet altijd hetzelfde geweest i
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{aron2.png}
-    \caption{Visuele voorstelling van hoe het $\omega$-effect het poloidale veld toroidaal maakt in de aardkern. (a) Een initieel magneetveld dat door de kern gaat (links) en een cylindrisch snelheidsveld (rechts) worden weergegeven. (b) De interactie tussen beide velden in (a) wordt op drie verschillende momenten weergegeven, van links naar rechts \cite{aron_book_ch8}}.
+    \includegraphics[width=0.5\textwidth]{aron_fig2.png}
+    \caption{Visuele voorstelling van hoe het $\omega$-effect het poloidale veld toroidaal maakt in de aardkern. (a) Een initieel magneetveld dat door de kern gaat (links) en een cylindrisch snelheidsveld (rechts) worden weergegeven. (b) De interactie tussen beide velden in (a) wordt op drie verschillende momenten weergegeven, van links naar rechts \cite{aron_book_ch8}. }
     \label{fig:aron2}
   \end{figure}
 De antwoorden op de vragen over het aardmagnetisch veld zijn te vinden binnenin de aarde. Het vaste binnenste deel van de kern en het vloeibare buitenste deel bestaan beide voornamelijk uit ijzer. Aangezien ijzer geleidend is, wordt een elektrisch veld opgewekt wanneer deze vloeistof door het magneetveld beweegt, wat op zijn beurt een nieuw magneetveld opwekt \cite{aron_demorest_paper}.
@@ -95,46 +96,58 @@ Het $\alpha\omega$-effect is stabiel genoeg om op korte tijdschaal een dipool vo
 
 Omdat de geodynamo chaotisch is, is het niet praktisch om de volgende polariteitsomkeringen deterministisch te voorspellen. Hiervoor worden twee moderne aanpakken gebruikt.
 De eerste methode is het stochastisch modelleren van het magneetveld door gebruik te maken van paleomagnetische observaties en verzamelde data. Hieruit krijgt men allerhande resultaten, zoals dat de kans op een omkering in de komende 20 000 jaar kleiner dan 2\% is en dat de huidige afname in dipoolmoment vreemd is, maar wel nog binnen de natuurlijke variatie valt \cite{aron_next_reversal}.
-De andere methode is de volledige MHD vergelijkingen numeriek te simuleren. Zo zijn Glatzmaier \& Roberts er in 1995 al in geslaagd om een veld zoals dat van de Aarde te simuleren, dat ook spontane omkeringen onderging \cite{aron_roberts}. Deze methoden vullen elkaar aan en hebben elk hun voor- en nadelen en naar beide wordt nog steeds onderzoek gevoerd.
+De andere methode is de volledige MHD vergelijkingen numeriek te simuleren. Zo zijn Glatzmaier \& Roberts er in 1995 al in geslaagd om een veld zoals dat van de aarde te simuleren, dat ook spontane omkeringen onderging \cite{aron_roberts}. Deze methoden vullen elkaar aan en hebben elk hun voor- en nadelen en naar beide wordt nog steeds onderzoek gevoerd.
 
 
 \section{Hoe het aardmagnetisch veld kan worden gemeten}
-Een bekend meetinstrument om het aardmagnetisch veld te meten is de fluxgate magnetometer.
-Het eerste onderdeel daarvan is een zacht magnetisch materiaal dat de vorm van een ring heeft dat fysici de kern noemen.
-Een zacht magnetisch materiaal is een materiaal dat zich in de buurt van een magneetveld magnetiseert maar wanneer het magneetveld verdwijnt weer demagnetiseert zoals weekijzer.
-Een aandrijfspoel is rond de hele ring gewikkeld waarbij denkbeeldig de linkerkant en de rechterkant van de ring worden onderscheden.
-Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld zoals in Figuur \ref{fig:tjalling1}.
+Een bekend meetinstrument om het aardmagnetisch veld te meten is de fluxgate magnetometer. Het eerste onderdeel daarvan is een zacht magnetisch materiaal dat de vorm van een ring heeft die fysici de kern noemen.
+Een zacht magnetisch materiaal is een materiaal dat zich in de buurt van een magneetveld magnetiseert, maar wanneer het magneetveld verdwijnt weer demagnetiseert, zoals weekijzer. Een aandrijfspoel is rond de hele ring gewikkeld waarbij de denkbeeldige linker- en rechterkant van de ring worden onderscheden.
+Rond de ring met de aandrijfspoel zit een grotere detectiespoel gewikkeld. In Figuur \ref{fig:tjalling1} is dit visueel weergegeven.
+In de volgende alinea zal beter worden uitgelegd wat de pijlen in de afbeelding vertegenwoordigen \cite{tjalling_imperial, tjalling_physicsopenlab}.
 \begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.5\textwidth]{tjalling_fig1.jpg}
-    \caption{}
+    \caption{Op deze tekening is de bouw van een fluxgate magnetometer te zien. Aan de linkerkant is een aandrijfspoel rond een kern gewikkeld en is de kern in twee helften onderscheden. Aan de rechterkant is rond dezelfde kern met de andrijfspoel een detectiespoel gewikkeld. De pijlen laten zien dat een extern magnetisch veld ervoor zorgt dat de verzadiging in de ene helft sneller dan in de ander gebeurt \cite{tjalling_imperial}}.
     \label{fig:tjalling1}
 \end{figure}
+
 Op de aandrijfspoel zit een wisselstroom. Beide kanten van de spoel zullen een magneetveld produceren waardoor de kern zich magnetiseert.
 Iedere helft van de kern zal daardoor voor een fluxverandering in de detectiespoel zorgen.
 Op een gegeven moment zal de kern zich niet nog meer magnetiseren.
-Zelfs niet als het magnetisch veld veroorzaakt door de stroom van de aandrijfspoel groter wordt.
+Zelfs niet als het magnetisch veld dat door de stroom van de aan aandrijfspoel wordt veroorzaakt, groter wordt.
 Dat noemen fysici verzadiging. Indien er geen extern magnetisch veld is, creëren de twee kanten van de kern voor de verzadiging een tegengestelde fluxverandering in de detectiespoel.
-De verzadiging is voor de twee kanten van de kern dan ook op exact hetzelfde moment. De totale fluxverandering in de detectiespoel zal daardoor altijd gelijk aan nul zijn.
-Volgens de inductiewet van Faraday zal de detectiespoel dan geen spanning krijgen.
-Indien een extern magnetisch veld een component heeft die uniform door de detectiespoel gaat, hebben beide helften van de kern zich al gemagnetiseerd.
-Het magnetisch veld is voor de ene helft van de kern in dezelfde zin en voor de andere helft van de kern in de tegengestelde zin van het magnetisch veld dat veroorzaakt is door de aandrijfspoel en door hen gaat.
+De verzadiging is voor de twee kanten van de kern ook op exact hetzelfde moment. De totale fluxverandering in de detectiespoel zal daardoor altijd gelijk aan nul zijn.
+Volgens de inductiewet van Faraday zal de detectiespoel dan geen spanning krijgen \cite{tjalling_imperial}.
+
+Indien een extern magnetisch veld een component heeft dat uniform door de detectiespoel gaat, hebben beide helften van de kern zich al gemagnetiseerd.
+Het magnetisch veld is voor de ene helft van de kern in dezelfde zin en voor de andere helft van de kern in de tegengestelde zin van het magnetisch veld dat de stroom van de aandrijfspoel zal creëren.
 Wanneer de aandrijfspoel de twee helften magnetiseert, is het alsof exact hetzelfde proces optreedt maar waarbij de twee helften vanaf een ander vertrekpunt starten.
-Daardoor treedt de verzadiging van de twee helften niet op exact hetzelfde moment waardoor de totale fluxverandering in de detectiespoel dan niet gelijk aan nul zal zijn.
-Volgens de inductiewet van Faraday zal de detectiespoel een spanning krijgen. Als een van de twee helften het eerst verzadigt zal de spanning van de detectiespoel hard stijgen.
+Daardoor treedt de verzadiging van de twee helften niet op exact hetzelfde moment op. De totale fluxverandering zal in de detectiespoel dan niet gelijk aan nul zijn.
+Volgens de inductiewet van Faraday zal de detectiespoel een spanning krijgen. Dat probeerden de illustratoren van Figuur \ref{fig:tjalling1} met de pijlen uit te leggen \cite{tjalling_imperial}.
+
+Als een van de twee helften het eerst verzadigt zal de spanning van de detectiespoel hard stijgen.
 Na een tijd raakt de tweede helft echter ook verzadigd en zal de spanning van de detectiespoel weer hard naar nul dalen.
 Omdat de stroom van de aandrijfspoel een wisselstroom is, zal daana exact hetzelfde proces maar dan met een negatieve spanning optreden.
-Het gevolg is dat de spanning van de detectiespoel een wisselspanning is. Anders gezegd is de spanning van de detectiespoel in functie van de tijd een sinusfunctie.
+Het gevolg is dat de spanning van de detectiespoel een wisselspanning is. Anders gezegd is de spanning van de detectiespoel in functie van de tijd een sinusfunctie zoals in Figuur \ref{fig:tjalling2}
 Fysici meten de amplitude van die functie. Ze berekenen daarmee het component van het aardmagnetisch veld dat door de detectiespoel gaat.
-De fluxgate magnetometer blijkt een zeer gevoelig instrument te zijn dat waarme fysici waarden van tot de nanotesla exact bekomen.
-Het probleem is echter dat maar een component van het aardmagnetisch veld werd gemeten. Een oplossing is om op het punt waar het gewenst is het aardmagnetisch veld te meten een orthonormale assenstelsel in te voeren.
-Het component van het aardmagnetisch veld volgens de x-as, y-as en z-as is dan meetbaar door de fluxgate magnetometer volgens de x-as, y-as en z-as te leggen. 
-Zo zijn de sterkte en richting van het aardmagnetisch veld makkelijk te berekenen
-\cite{tjalling_imperial, tjalling_physicsopenlab, tjalling_dexinmag}.
+De fluxgate magnetometer blijkt een zeer gevoelig instrument te zijn dat waarme fysici waarden van tot de nanotesla exact bekomen \cite{tjalling_imperial}.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{tjalling_fig2.jpg}
+    \caption{Indien er een extern magnetisch veld is, zal er in de detectiespoel een wisselspanning optreden. In dat geval is de spanning in functie van de tijd een sinusfunctie. Deze figuur geeft zo'n sinusfunctie weer.}
+    \label{fig:tjalling2}
+\end{figure}
+
+Het probleem is echter dat maar een component van het aardmagnetisch veld werd gemeten. Een oplossing is om op het punt waar het gewenst is om het aardmagnetisch veld te meten een orthonormaal assenstelsel in te voeren.
+Het component van het aardmagnetisch veld volgens de x-as, y-as en z-as is dan meetbaar door de fluxgate magnetometer volgens de x-as, y-as en z-as te leggen.
+Zo zijn de sterkte en richting van het aardmagnetisch veld makkelijk te berekenen \cite{tjalling_dexinmag}.
+
 
 \section{Veranderingen}
 \label{sec:sec_4}
-Het aardmagnetisch veld is allesbehalve statisch; het verandert voortdurend van sterkte, richting en zelfs van polariteit. Door de geschiedenis van de Aarde heen hebben deze veranderingen plaatsgevonden op verschillende tijdschalen, van eeuwen tot miljoenen jaren.
+%TODO:FIX THIS MESS
+Het aardmagnetisch veld is allesbehalve statisch; het verandert voortdurend van sterkte, richting en zelfs van polariteit. Door de geschiedenis van de aarde heen hebben deze veranderingen plaatsgevonden op verschillende tijdschalen, van eeuwen tot miljoenen jaren.
 Wetenschappers hebben dit fascinerende verleden kunnen bestuderen door gebruik te maken van slimme methoden die variëren van het bestuderen van oude stenen tot het analyseren van scheepsjournalen.
 
 De meest drastische veranderingen die het magnetisch veld ondergaat, zijn de polariteitsomkeringen. Hierbij schuiven de magnetische polen over de aardbol en wisselen uiteindelijk van plaats.
@@ -148,7 +161,7 @@ Dit is zeven keer langer dan de eerder geschatte 10.000 jaar en bewijst dat de d
 
 Naast deze korte "flips" zijn er ook superchrons: perioden van uitzonderlijke stabiliteit waarin het veld gedurende tientallen miljoenen jaren niet omkeert.
 In de laatste 540 miljoen jaar zijn er drie van zulke superchrons bekend. Onderzoek heeft zelfs aanwijzingen gevonden voor nog eens tien superchrons in de 1,3 miljard jaar daarvoor.
-Dit is verrassend omdat wetenschappers verwachtten dat de afkoeling van de Aarde en de groei van de vaste binnenkern een groot effect zouden hebben op het gedrag van het veld.
+Dit is verrassend omdat wetenschappers verwachtten dat de afkoeling van de aarde en de groei van de vaste binnenkern een groot effect zouden hebben op het gedrag van het veld.
 De ontdekking suggereert dat het mechanisme dat het veld opwekt, de geodynamo, veel robuuster is dan gedacht.
 
 Omdat er niemand was om het magnetisch veld van miljoenen jaren geleden te meten, moeten wetenschappers creatief zijn.
@@ -173,7 +186,7 @@ Door deze enorme hoeveelheid data te combineren met andere metingen, kon hij de 
 
 
 %
-\section{Magnetische velden van planeten en de Zon}
+\section{Magnetische velden van planeten en de zon}
 
 Het magnetisch veld is niet uniek aan onze aarde. Het komt ook voor bij andere planeten, en bij onze zon. Maar ze is wel verschillend in sterkte.
 Sommige planeten hebben er geen, andere hebben er die tot wel 50 keer sterker kunnen zijn dan van onze aarde. 
